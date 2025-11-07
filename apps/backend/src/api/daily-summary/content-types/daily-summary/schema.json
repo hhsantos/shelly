@@ -1,0 +1,65 @@
+{
+  "kind": "collectionType",
+  "collectionName": "daily_summaries",
+  "info": {
+    "singularName": "daily-summary",
+    "pluralName": "daily-summaries",
+    "displayName": "Daily summary",
+    "description": "Daily energy aggregation with tariff breakdown"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {
+    "graphql": {
+      "description": "Resumen diario de consumo energético y costes por tarifa"
+    }
+  },
+  "attributes": {
+    "periodStart": {
+      "type": "datetime",
+      "required": true,
+      "unique": true
+    },
+    "periodEnd": {
+      "type": "datetime",
+      "required": true
+    },
+    "totalEnergy": {
+      "type": "decimal",
+      "required": true
+    },
+    "totalCost": {
+      "type": "decimal",
+      "required": true
+    },
+    "readingCount": {
+      "type": "integer",
+      "default": 0
+    },
+    "p1Energy": {
+      "type": "decimal",
+      "default": 0
+    },
+    "p2Energy": {
+      "type": "decimal",
+      "default": 0
+    },
+    "p3Energy": {
+      "type": "decimal",
+      "default": 0
+    },
+    "p1Cost": {
+      "type": "decimal",
+      "default": 0
+    },
+    "p2Cost": {
+      "type": "decimal",
+      "default": 0
+    },
+    "p3Cost": {
+      "type": "decimal",
+      "default": 0
+    }
+  }
+}

@@ -59,6 +59,9 @@ afterEach(async () => {
     'api::reading.reading',
     'api::tariff-period.tariff-period',
     'api::cost-summary.cost-summary',
+    'api::holiday.holiday',
+    'api::hourly-summary.hourly-summary',
+    'api::daily-summary.daily-summary',
   ];
 
   await Promise.all(

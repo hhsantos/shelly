@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "holidays",
+  "info": {
+    "singularName": "holiday",
+    "pluralName": "holidays",
+    "displayName": "Holiday",
+    "description": "Catalog of public holidays impacting tariff selection"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {
+    "graphql": {
+      "description": "Festivos configurables utilizados para ajustar los periodos tarifarios"
+    }
+  },
+  "attributes": {
+    "date": {
+      "type": "date",
+      "required": true,
+      "unique": true
+    },
+    "name": {
+      "type": "string"
+    }
+  }
+}

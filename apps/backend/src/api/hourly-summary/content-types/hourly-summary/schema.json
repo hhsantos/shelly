@@ -1,0 +1,65 @@
+{
+  "kind": "collectionType",
+  "collectionName": "hourly_summaries",
+  "info": {
+    "singularName": "hourly-summary",
+    "pluralName": "hourly-summaries",
+    "displayName": "Hourly summary",
+    "description": "Aggregated hourly energy consumption and costs"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {
+    "graphql": {
+      "description": "Resumen horario de consumo energético y costes por periodo tarifario"
+    }
+  },
+  "attributes": {
+    "periodStart": {
+      "type": "datetime",
+      "required": true,
+      "unique": true
+    },
+    "periodEnd": {
+      "type": "datetime",
+      "required": true
+    },
+    "totalEnergy": {
+      "type": "decimal",
+      "required": true
+    },
+    "totalCost": {
+      "type": "decimal",
+      "required": true
+    },
+    "readingCount": {
+      "type": "integer",
+      "default": 0
+    },
+    "p1Energy": {
+      "type": "decimal",
+      "default": 0
+    },
+    "p2Energy": {
+      "type": "decimal",
+      "default": 0
+    },
+    "p3Energy": {
+      "type": "decimal",
+      "default": 0
+    },
+    "p1Cost": {
+      "type": "decimal",
+      "default": 0
+    },
+    "p2Cost": {
+      "type": "decimal",
+      "default": 0
+    },
+    "p3Cost": {
+      "type": "decimal",
+      "default": 0
+    }
+  }
+}

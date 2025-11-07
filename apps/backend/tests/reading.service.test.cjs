@@ -67,6 +67,7 @@ test('fetchShellyData stores a reading parsed from Shelly responses', async () =
 test('aggregate returns consumption metrics and tariff breakdown', async () => {
   await strapi.entityService.create('api::tariff-period.tariff-period', {
     data: {
+      code: 'P3',
       name: 'Night',
       startTime: '00:00:00',
       endTime: '06:00:00',
@@ -77,6 +78,7 @@ test('aggregate returns consumption metrics and tariff breakdown', async () => {
 
   await strapi.entityService.create('api::tariff-period.tariff-period', {
     data: {
+      code: 'P1',
       name: 'Day',
       startTime: '06:00:00',
       endTime: '23:59:59',
