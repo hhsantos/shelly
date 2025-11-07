@@ -101,6 +101,8 @@ yarn start
 - **Desarrollo**: usa SQLite automáticamente con la configuración de `config/env/development/database.js`.
 - **Producción**: define las variables `STRAPI_POSTGRES_*` para conectar con PostgreSQL. El archivo `config/env/production/database.js` habilita TLS por defecto.
 - **Plugins**: `users-permissions` viene configurado para emitir JWT. Ajusta la expiración mediante `STRAPI_JWT_EXPIRES_IN`.
+- **Agregaciones energéticas**: Strapi ejecuta dos tareas programadas (`cron-tasks.js`) que calculan resúmenes horarios y diarios a partir de las lecturas en `readings`. Cada lectura se etiqueta automáticamente con la tarifa P1/P2/P3 correspondiente, respetando fines de semana y festivos configurados en la colección `holidays`. Los resultados se almacenan en las nuevas colecciones `hourly_summaries` y `daily_summaries` para consultas rápidas.
+- **Tarifas configurables**: los periodos y precios de P1/P2/P3 se gestionan desde la colección `tariff_periods`. Cada registro define el código de tarifa, la franja horaria (`startTime`/`endTime`), los días de la semana a los que aplica y el precio (`rate`). Añade los festivos nacionales o regionales en `holidays` para forzar la aplicación de P3 en esas fechas. Puedes actualizar estos valores sin desplegar código: la lógica de cálculo consume los datos almacenados en la base de datos en cada ejecución del cron.
 
 ## Configuración de Next.js 13 + shadcn/ui
 
