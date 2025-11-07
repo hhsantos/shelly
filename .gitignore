@@ -1,0 +1,12 @@
+node_modules
+.yarn/cache
+.yarn/install-state.gz
+.pnp.*
+.env
+.env.*
+apps/**/node_modules
+apps/backend/data
+apps/backend/.tmp
+apps/backend/build
+apps/frontend/.next
+apps/frontend/out

@@ -1,0 +1,12 @@
+{
+  "name": "shelly-monorepo",
+  "private": true,
+  "workspaces": [
+    "apps/backend",
+    "apps/frontend"
+  ],
+  "scripts": {
+    "dev:backend": "yarn workspace shelly-backend develop",
+    "dev:frontend": "yarn workspace shelly-frontend dev"
+  }
+}
