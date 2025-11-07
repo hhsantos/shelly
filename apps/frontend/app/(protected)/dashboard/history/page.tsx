@@ -1,15 +1,15 @@
 import { redirect } from 'next/navigation';
 import { getServerSession } from 'next-auth';
 
-import { DailySummary } from '@/components/dashboard/daily-summary';
+import { HistoryView } from '@/components/dashboard/history-view';
 import { authConfig } from '@/lib/auth';
 
-export default async function DashboardPage() {
+export default async function HistoryPage() {
   const session = await getServerSession(authConfig);
 
   if (!session?.jwt) {
     redirect('/');
   }
 
-  return <DailySummary jwt={session.jwt} />;
+  return <HistoryView jwt={session.jwt} />;
 }
