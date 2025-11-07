@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tariff_periods",
+  "info": {
+    "singularName": "tariff-period",
+    "pluralName": "tariff-periods",
+    "displayName": "Tariff period",
+    "description": "Energy tariff period configuration"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {
+    "graphql": {
+      "description": "Periodos tarifarios para el cálculo de costes energéticos"
+    }
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "startTime": {
+      "type": "time",
+      "required": true
+    },
+    "endTime": {
+      "type": "time",
+      "required": true
+    },
+    "rate": {
+      "type": "decimal",
+      "required": true
+    },
+    "weekdays": {
+      "type": "json",
+      "default": [0,1,2,3,4,5,6]
+    },
+    "costSummaries": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::cost-summary.cost-summary",
+      "mappedBy": "tariffPeriod"
+    }
+  }
+}
