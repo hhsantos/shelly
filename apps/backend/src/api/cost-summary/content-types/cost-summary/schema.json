@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cost_summaries",
+  "info": {
+    "singularName": "cost-summary",
+    "pluralName": "cost-summaries",
+    "displayName": "Cost summary",
+    "description": "Aggregated energy cost summary"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {
+    "graphql": {
+      "description": "Resultados agregados de consumo energético y costes"
+    }
+  },
+  "attributes": {
+    "periodStart": {
+      "type": "datetime",
+      "required": true
+    },
+    "periodEnd": {
+      "type": "datetime",
+      "required": true
+    },
+    "totalEnergy": {
+      "type": "decimal",
+      "required": true
+    },
+    "totalCost": {
+      "type": "decimal",
+      "required": true
+    },
+    "tariffPeriod": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::tariff-period.tariff-period",
+      "inversedBy": "costSummaries"
+    }
+  }
+}

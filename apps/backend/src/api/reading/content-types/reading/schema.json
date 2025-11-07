@@ -1,0 +1,47 @@
+{
+  "kind": "collectionType",
+  "collectionName": "readings",
+  "info": {
+    "singularName": "reading",
+    "pluralName": "readings",
+    "displayName": "Reading",
+    "description": "Shelly device energy reading"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {
+    "graphql": {
+      "description": "Mediciones energéticas capturadas desde dispositivos Shelly"
+    }
+  },
+  "attributes": {
+    "timestamp": {
+      "type": "datetime",
+      "required": true
+    },
+    "energy": {
+      "type": "decimal",
+      "required": true
+    },
+    "power": {
+      "type": "decimal",
+      "required": true
+    },
+    "voltage": {
+      "type": "decimal"
+    },
+    "current": {
+      "type": "decimal"
+    },
+    "temperature": {
+      "type": "decimal"
+    },
+    "statusPayload": {
+      "type": "json"
+    },
+    "emeterPayload": {
+      "type": "json"
+    }
+  }
+}

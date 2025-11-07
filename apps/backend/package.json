@@ -7,13 +7,15 @@
     "develop": "strapi develop",
     "start": "strapi start",
     "build": "strapi build",
-    "strapi": "strapi"
+    "strapi": "strapi",
+    "test": "NODE_ENV=test node --test tests/**/*.test.cjs"
   },
   "dependencies": {
     "@strapi/plugin-i18n": "^4.24.0",
     "@strapi/plugin-users-permissions": "^4.24.0",
     "@strapi/provider-upload-local": "^4.24.0",
     "@strapi/strapi": "^4.24.0",
+    "node-fetch": "^2.6.12",
     "pg": "^8.11.3",
     "sqlite3": "^5.1.7"
   }
